@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="test.TermEditPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Back"
+                     Clicked="ToolbarBack_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Edit Term Details:" HorizontalTextAlignment="Start" FontSize="24"/>
+            <Grid Margin="10,10,10,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".25*" />
+                    <ColumnDefinition Width=".75*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Label Text="Name:" Grid.Column="0" Grid.Row="0" FontSize="16" VerticalTextAlignment="Center"/>
+                <Entry Text="" x:Name="termTitle" Grid.Column="1" Grid.Row="0"/>
+
+                <Label Text="Start Date:" Grid.Column="0" Grid.Row="1" FontSize="16" VerticalTextAlignment="Center"/>
+                <DatePicker x:Name="termStart" Grid.Column="1" Grid.Row="1"/>
+
+                <Label Text="Notifications:" Grid.Column="0" Grid.Row="2" FontSize="16" VerticalTextAlignment="Center"/>
+                <CheckBox x:Name="notiStart" Grid.Column="1" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="Center"/>
+                
+                <Label Text="End Date:" Grid.Column="0" Grid.Row="3" FontSize="16" VerticalTextAlignment="Center"/>
+                <DatePicker x:Name="termEnd" Grid.Column="1" Grid.Row="3"/>
+
+                <Label Text="Notifications:" Grid.Column="0" Grid.Row="4" FontSize="16" VerticalTextAlignment="Center"/>
+                <CheckBox x:Name="notiEnd" Grid.Column="1" Grid.Row="4" HorizontalOptions="Center" VerticalOptions="Center"/>
+                
+                <Button Text="Save Changes"
+                    x:Name="saveTermButton"
+                    Clicked="SaveTermButton_Clicked" Grid.Row="5" Grid.ColumnSpan="2"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

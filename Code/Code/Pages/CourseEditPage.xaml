@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="test.CourseEditPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Back"
+                     Clicked="ToolbarBack_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Edit Course Details:" HorizontalTextAlignment="Start" FontSize="24"/>
+            <Grid Margin="10,10,10,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".25*" />
+                    <ColumnDefinition Width=".75*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Label Text="Name:" Grid.Column="0" Grid.Row="0" FontSize="16" VerticalOptions="Center"/>
+                <Entry Text="" x:Name="courseName" Grid.Column="1" Grid.Row="0"/>
+
+                <Label Text="Start Date:" Grid.Column="0" Grid.Row="1" FontSize="16" VerticalOptions="Center"/>
+                <DatePicker x:Name="courseStart" Grid.Column="1" Grid.Row="1"/>
+
+                <Label Text="Notifications:" Grid.Column="0" Grid.Row="2" VerticalOptions="Center" FontSize="14"/>
+                <CheckBox x:Name="notiStart" Grid.Column="1" Grid.Row="2"/>
+
+                <Label Text="End Date:" Grid.Column="0" Grid.Row="3" VerticalOptions="Center" FontSize="16"/>
+                <DatePicker x:Name="courseEnd" Grid.Column="1" Grid.Row="3"/>
+
+                <Label Text="Notifications:" Grid.Column="0" Grid.Row="4" VerticalOptions="Center" FontSize="14"/>
+                <CheckBox x:Name="notiEnd" Grid.Column="1" Grid.Row="4"/>
+
+                <Label Text="Status:" Grid.Column="0" Grid.Row="5" VerticalOptions="Center" FontSize="16"/>
+                <Picker x:Name="courseStatus" Grid.Column="1" Grid.Row="5"/>
+
+                <Label Text="Notes:" Grid.Column="0" Grid.Row="6" FontSize="16" VerticalOptions="Center"/>
+                <Editor Text="" x:Name="courseNotes" Grid.Column="0" Grid.Row="7" HeightRequest="150" Grid.ColumnSpan="2" FontSize="Body"/>
+                
+                <Button Text="Save Changes"
+                    x:Name="saveCourseButton"
+                    Clicked="SaveCourseButton_Clicked" Grid.Row="8" Grid.ColumnSpan="2"/>
+                <Button Text="Share Notes"
+                        x:Name="shareNotesButton"
+                        Clicked="ShareNotesButton_Clicked"
+                        Grid.Row="9"
+                        Grid.ColumnSpan="2"/>
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

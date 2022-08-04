@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="test.CourseList">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Back"
+                     Clicked="ToolbarBack_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Courses:" HorizontalTextAlignment="Start" FontSize="24"/>
+            <ListView x:Name="coursesListView" HasUnevenRows="True" BackgroundColor="White">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Vertical" Spacing="4" Padding="5">
+                                    <Label Text="{Binding Name}" FontSize="18"/>
+                                    <Label Text="{Binding Start, StringFormat='Start Date: {0:MMMM dd, yyyy}'}" FontSize="16"/>
+                                    <Label Text="{Binding End, StringFormat='End Date: {0:MMMM dd, yyyy}'}" FontSize="16"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid Margin="5,5,5,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".50*" />
+                    <ColumnDefinition Width=".50*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Button Text="View Assessments"
+                    x:Name="assessButton"
+                    Clicked="AssessButton_Clicked"
+                    Grid.Column="0"/>
+                <Button Text="View Instructors"
+                    x:Name="InstructorsButton"
+                    Clicked="InstructorsButton_Clicked"
+                    Grid.Column="1"/>
+            </Grid>
+            <Grid Margin="5,5,5,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />                    
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Button Text="Add Course"
+                        x:Name="addCourseButton"
+                        Clicked="AddCourseButton_Clicked"
+                        Grid.Row="0"/>
+                <Button Text="Edit Course"
+                        x:Name="editCourseButton"
+                        Clicked="EditCourseButton_Clicked"
+                        Grid.Row="1"/>
+                <Button Text="Delete Course"
+                    x:Name="deleteCourseButton"
+                    Clicked="DeleteCourseButton_Clicked"
+                    Grid.Row="2"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

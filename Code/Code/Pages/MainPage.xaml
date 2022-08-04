@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="test.MainPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="CornflowerBlue" Padding="24" CornerRadius="0">
+                <Label Text="Course Planner" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+
+            <Label Text="Terms" HorizontalTextAlignment="Start" FontSize="24"/>
+            <ListView x:Name="termsListView" HasUnevenRows="True" BackgroundColor="White">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Vertical" Spacing="4" Padding="5">
+                                    <Label Text="{Binding Title}" FontSize="16"/>
+                                    <Label Text="{Binding Start, StringFormat='Start Date: {0:MMMM dd, yyyy}'}" FontSize="16"/>
+                                    <Label Text="{Binding End, StringFormat='End Date: {0:MMMM dd, yyyy}'}" FontSize="16"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="View Courses"
+                    x:Name="coursesButton"
+                    Clicked="CoursesButton_Clicked"/>
+            <Button Text="Add Term"
+                    x:Name="addTermButton"
+                    Clicked="AddTermButton_Clicked"/>
+            <Button Text="Edit Term"
+                    x:Name="editTermButton"
+                    Clicked="EditTermButton_Clicked"/>
+            <Button Text="Delete Term"
+                    x:Name="deleteCourseButton"
+                    Clicked="DeleteTermButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

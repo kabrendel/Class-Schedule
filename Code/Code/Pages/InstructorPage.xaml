@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="test.InstructorPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Back"
+                     Clicked="ToolbarBack_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Instructor:" HorizontalTextAlignment="Start" FontSize="24" Margin="5,0,0,0"/>
+            <ListView x:Name="instructorListView" HasUnevenRows="True" BackgroundColor="White" Margin="5,5,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Vertical" Spacing="4" Padding="5">
+                                    <Label Text="{Binding Name, StringFormat='Name: {0}'}" FontSize="18"/>
+                                    <Label Text="{Binding Email, StringFormat='Email: {0}'}" FontSize="16"/>
+                                    <Label Text="{Binding Phone, StringFormat='Phone: {0}'}" FontSize="16"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Add Instructor"
+                    x:Name="addInsButton"
+                    Clicked="AddInsButton_Clicked"/>
+            <Button Text="Edit Instructor"
+                    x:Name="editInsButton"
+                    Clicked="EditInsButton_Clicked"/>
+            <Button Text="Delete Instructor"
+                    x:Name="deleteInsButton"
+                    Clicked="DeleteInsButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
